@@ -14,7 +14,7 @@ El pipeline implementado permite:
 - Reducir dimensionalidad con UMAP.
 - Estimar un k óptimo para clustering (método del codo + silueta).
 - Aplicar K-Means para asignar clústeres al corpus.
-#Explorar resultados con:
+- Explorar resultados con:
   -visualización 2D (UMAP)
   -nubes de palabras por clúster
   -palabras clave y palabras distintivas por clúster
