@@ -1,4 +1,4 @@
-Clustering de notas periodísticas con embeddings + UMAP + K-Means
+### Clustering de notas periodísticas con embeddings + UMAP + K-Means
 
 Este repositorio contiene el código desarrollado en el marco de mi tesis doctoral y beca doctoral de CONICET, con el objetivo de realizar una aproximación exploratoria al corpus mediante técnicas de clustering no supervisado aplicadas a textos periodísticos. El propósito principal es identificar agrupamientos temáticos/discursivos y explorar permanencias o variaciones en el conjunto de datos.
 
