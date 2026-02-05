@@ -4,54 +4,36 @@ Este repositorio contiene el código desarrollado en el marco de mi tesis doctor
 
 El corpus está compuesto por notas publicadas en tres portales de noticias online de Argentina (La Voz de Córdoba, Diario Uno de Mendoza y La Capital de Rosario) durante el período 2015–2020, recolectadas por su vinculación con las movilizaciones feministas. Esto responde al objetivo principal de la investigación: comprender la producción discursiva en torno a movilizaciones feministas por parte de la prensa de alcance local y regional en Argentina durante 2015–2020.
 
-Objetivos del notebook
+### Objetivos del notebook
 
 El pipeline implementado permite:
 
-Cargar y preparar un dataset de notas periodísticas con campos textuales.
+- Cargar y preparar un dataset de notas periodísticas con campos textuales.
+- Unificar texto (Titular + Bajada + Cuerpo_texto) en una única variable para análisis.
+- Generar embeddings semánticos mediante modelos preentrenados (SentenceTransformers).
+- Reducir dimensionalidad con UMAP.
+- Estimar un k óptimo para clustering (método del codo + silueta).
+- Aplicar K-Means para asignar clústeres al corpus.
+#Explorar resultados con:
+  -visualización 2D (UMAP)
+  -nubes de palabras por clúster
+  -palabras clave y palabras distintivas por clúster
 
-Unificar texto (Titular + Bajada + Cuerpo_texto) en una única variable para análisis.
-
-Generar embeddings semánticos mediante modelos preentrenados (SentenceTransformers).
-
-Reducir dimensionalidad con UMAP.
-
-Estimar un k óptimo para clustering (método del codo + silueta).
-
-Aplicar K-Means para asignar clústeres al corpus.
-
-Explorar resultados con:
-
-visualización 2D (UMAP)
-
-nubes de palabras por clúster
-
-palabras clave y palabras distintivas por clúster
-
-Dataset (estructura esperada)
-
+### Dataset (estructura esperada)
 El dataset utilizado no se incluye en este repositorio. Para ejecutar el notebook, se espera un archivo tabular con las siguientes columnas:
-
-ID
-
-Titular
-
-Bajada
-
-Cuerpo_texto
-
-medio (opcional, si se desea segmentar por portal)
-
-anio (opcional, si se desea segmentar por período)
+- ID
+- Titular
+- Bajada
+- Cuerpo_texto
+- medio (opcional, si se desea segmentar por portal)
+- anio (opcional, si se desea segmentar por período)
 
 En el preprocesamiento, las columnas Titular, Bajada y Cuerpo_texto se concatenan en una variable adicional:
+- texto_completo
 
-texto_completo
-
-Metodología (resumen técnico)
+### Metodología (resumen técnico)
 1) Embeddings (SentenceTransformers)
-
-Se utiliza un modelo preentrenado multilingüe para representar semánticamente cada nota periodística:
+2) Se utiliza un modelo preentrenado multilingüe para representar semánticamente cada nota periodística:
 
 distiluse-base-multilingual-cased-v1
 
